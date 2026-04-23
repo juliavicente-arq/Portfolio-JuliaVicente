@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Julia Vicente | Portfólio</title>
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+
+    <nav class="navegação">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+
+            </li>
+        </ul>
+    </nav>
+    <main id="inicio" class="cabecalho">
+        <div>
+            <div class="foto-container">
+                <img src="./img/IMG_4561.JPEG" alt="Foto de Julia Vicente" class="foto-perfil">
+            </div>
+
+            <h1>Julia Vicente</h1>
+            <p class="cabecalho-subtitulo">Graduanda de Arquitetura e Urbanismo</p>
+        </div>
+    </main>
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Sou estudante de Arquitetura e Urbanismo pela UEM e apaixonada pelo meu curso. Almejo obter experiência profissional na área arquitetônica. Possuo experiência em atendimento ao público, gestão de redes sociais, registro em sistemas internos e edição de fotos e vídeos. Tenho conhecimento em softwares de arquitetura, além de ferramentas de edição de imagem e vídeo. Desenvolvi este site por conta própria para me apresentar e registrar meus projetos ao longo do curso.
+
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="./img/Design sem nome (1).png" alt="Projeto 1" class="projetos-img">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Abrigo para Borracha</h3>
+                    <p class="paragrafo-projetos">Projeto desenvolvido por meio de um estudo de composição e unidade. Trata-se de um abrigo para uma borracha, criado a partir de uma composição modular e de uma forma independente com lápis.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/Design sem nome (2).png" alt="Projeto 2" class="projetos-img">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Desenho de Perspectiva</h3>
+                    <p class="paragrafo-projetos">Desenho de Perspectiva com 2 pontos de fuga.</p>
+                </div>
+            </div>
+            <div class="projetos-card">
+                <img src="./img/Design sem nome (2).png" alt="Projeto 3" class="projetos-img">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Desenho de Perspectiva 2</h3>
+                    <p class="paragrafo-projetos">Desenho de Perspectiva com 3 pontos de fuga.</p>
+                </div>
+            </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="nome-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+
+
+
+    </section>
+        <script>
+        function enviarWhats(event) {
+            event.preventDefault();
+
+            const nome= document.getElementById('nome').value ;
+            const mensagem= document.getElementById('mensagem').value;
+            const telefone = '5544997460777';
+            const texto = `Olá, meu nome é ${nome} e minha mensagem é: ${mensagem}`;
+            const msgFormatoWhatsApp = encodeURIComponent(texto);
+            const url = `https://wa.me/${telefone}?text=${msgFormatoWhatsApp}`;
+            console.log(url);
+         window.open(url, '_blank');
+         }
+        </script>
+    
+
+
+</body>
+
+</html >
